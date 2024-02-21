@@ -1,0 +1,1 @@
+const numeroEntero = 3
