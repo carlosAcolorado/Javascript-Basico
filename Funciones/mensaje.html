@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Function start</title>
+    <style>
+      .msgBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 242px;
+        background: #eee;
+        text-align: center;
+        border-radius: 10px;
+      }
+
+      .msgBox p {
+        line-height: 1.5;
+        padding: 10px 20px;
+        color: #333;
+        font-size: 15px;
+        padding-left: 82px; /* organiza el texto a la izquierda */
+        background-position: 25px center;/* organiza la imagen del icono en el centro */
+        background-repeat: no-repeat;/* para no repetir el icono en todo el div */
+      }
+
+      .msgBox button {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.1rem;
+        color: #383737;
+        cursor: pointer;
+
+      }
+
+    </style>
+  </head>
+  <body>
+    <button>Display message box</button>
+
+    <script>
+         let btn = document.querySelector("button");
+         btn.onclick = function () {
+    displayMessage("Your inbox is almost full — delete some mails",'warning');
+        }; 
+/*no usamos los parentesis porque queres que la funcion sea llamada solo luego de que el usuario haga click, si los ponemos inmediatamente sera ejecutada la funcion.
+Si queremos especificar parámetros dentro de paréntesis para la función a la que estamos llamando, no podemos llamarla directamente, necesitamos colocarla dentro de una función anónima para que no esté en el ámbito inmediato y, por lo tanto, no se llame de inmediato. Ahora no se llamará hasta que se haga clic en el botón.*/
+
+
+      function displayMessage(msgText, msgType) {
+    
+        let html = document.querySelector("html");
+       
+        let panel = document.createElement("div");
+        panel.setAttribute("class", "msgBox");
+        html.appendChild(panel);
+
+        let msg = document.createElement("p");
+        msg.textContent = msgText;
+        panel.appendChild(msg);
+
+        let closeBtn = document.createElement("button");
+        closeBtn.textContent = "x";
+        panel.appendChild(closeBtn);
+
+        closeBtn.onclick = function () {
+        panel.parentNode.removeChild(panel);
+        };
+        
+        if (msgType === "warning") {
+        msg.style.backgroundImage = "url(iconos/warning.png)";
+        panel.style.backgroundColor = "red";
+        } else if (msgType === "chat") {
+        msg.style.backgroundImage = "url(iconos/chat.png)";
+        panel.style.backgroundColor = "aqua";
+        } else {
+        msg.style.paddingLeft = "20px";
+        }
+        //se ha confiogura la funcion para ingresar diferentes tipos de mensajes y un texto especifico para ese tipio de mensaje, en caso de solo ingresar un mensje y no colocar el tipo de mensaje, no cambiara el fondo ni se agregara el icono
+      }
+
+     
+    </script>
+  </body>
+</html>
