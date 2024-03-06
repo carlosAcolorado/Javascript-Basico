@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Events: Task 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      button {
+        display: block;
+        margin: 20px 0 20px 20px;
+        height: 40px;
+        width: 90px;
+        background-color: red;
+        color: white
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <button class="off">Machine is off</button>
+
+  <script>
+    const btn = document.querySelector('.off');
+
+    function newText (){
+    if(btn.textContent === 'Machine is on')
+    {
+    btn.textContent ='Machine is off';
+    btn.style.backgroundColor = 'red'
+    }else{
+    btn.textContent ='Machine is on';
+    btn.style.backgroundColor = 'green'
+        }
+    }
+ btn.addEventListener('click',newText)
+  </script>
+
+  </body>
+</html>
