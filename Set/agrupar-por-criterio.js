@@ -9,6 +9,6 @@ const users = [
     { name: "ZeroBl", type: "viewer", color: "black" }
   ];
 
-const usersByType = Object.groupBy(users, user => user.type);
+const usersByType = Object.groupBy(users, ({type}) => type);
 
-usersByType;
+console.log(usersByType);
