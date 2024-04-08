@@ -23,8 +23,6 @@ let persona = {
   // Invocando un método del objeto
   persona.saludar();  // Imprime: ¡Hola!
 
-
-
   
   // Usando una función constructora para crear un objeto
 function Persona(nombre, edad, esEstudiante) {
