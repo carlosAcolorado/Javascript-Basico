@@ -1,17 +1,22 @@
-//la  clase object es la clase padre de todas las clases y por tanto las clases hijas heredan todos sus metodos 
-//clase padre 
 class Persona {
 
     //atributos estaticos
     //no se accaden con this se acceden con la clase
-    static contadorObjetos = 0; //atributo de la clase
-    email = 'Valor default email' //atributo de nuestros objetos
+    static contadorPersonas = 0; 
+
+    //constante statica de solo lectura
+    static get MAX_OBJ (){
+        return 5;
+    }
 
     constructor(nombre,apellido){
         this._nombre = nombre;
         this._apellido = apellido ;
-        Persona.contadorObjetos++;
-        console.log('Se incrementa contador: '+ Persona.contadorObjetos)
+        if(Persona.contadorPersonas < Persona.MAX_OBJ){
+            this.idPersona = ++Persona.contadorPersonas
+        }
+        else
+        console.log('Se han alcanzado el numero maximo objetos')
         }
 
     get nombre(){
@@ -32,12 +37,10 @@ class Persona {
 
     nombreCompleto(){
         //dentro de la clase no se usa la palabra function
-        return this._nombre +' '+this._apellido
+        return this.idPersona+ ' '+this._nombre +' '+this._apellido
     }
 
-    //sobresbribiendo elmetodo de la clase padre (object)
-    //polimofismo: multiples formas en tiempo de ejecucion
-    //el metodo que se ejecuta depende si es una referencia de tipo padre o de tipo hijo
+
     toString() {
         return this.nombreCompleto();
     }
@@ -76,23 +79,24 @@ class Empleado extends Persona{
     }
 }
 
-let persona1 = new Empleado ('Juan','Perez','Contabilidad')
-console.log(persona1);
-console.log(persona1.nombreCompleto())
+
+let persona1 = new Empleado ('Juan','Perez','Contabilidad');
+console.log(persona1.toString());
 
 let empleado1 = new Empleado('Maria','Jimenez','Sistemas');
-console.log(empleado1);
-console.log(empleado1.nombreCompleto())
 console.log(empleado1.toString())
 
-Persona.saludar2(empleado1);
-Empleado.saludar2(empleado1);
-//se puede usar desde la clase que extiende o clase hija
+let empleado2 = new Empleado('Pedro','Hernandez','Finanzas');
+console.log(empleado2.toString())
 
-//al igual que con los metodos los atributos se llaman usando la clase y no con el objeto
-console.log(Persona.contadorObjetos);
-console.log(Empleado.contadorObjetos);
-//las clases hijas heredan atributos static
+let empleado3 = new Empleado('Juliana','Ramirez','Finanzas');
+console.log(empleado3.toString());
 
-console.log(persona1.email); //accediendo 
-console.log(empleado1.email)
+let empleado4 =new Empleado ('Mariana','Lopez','Maketing');
+console.log(empleado4.toString());
+
+//no se le asigna un id ya que se ha alcanzado el numero maximo de objetos creados en este caso de 5
+let empleado5 =new Empleado ('Mariana','Lopez','Maketing');
+console.log(empleado5.toString())
+
+console.log(Persona.MAX_OBJ);
