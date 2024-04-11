@@ -82,8 +82,8 @@ console.log(persona1.nombreCompleto())
 
 let empleado1 = new Empleado('Maria','Jimenez','Sistemas');
 console.log(empleado1);
-console.log(empleado1.nombreCompleto())
-console.log(empleado1.toString())
+console.log(empleado1.nombreCompleto());
+console.log(empleado1.toString());
 
 Persona.saludar2(empleado1);
 Empleado.saludar2(empleado1);
