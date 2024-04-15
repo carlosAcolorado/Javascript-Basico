@@ -1,3 +1,5 @@
+//no se puede hacer uso de la funcion flecha sin antes haberla
+
 const greeting = function (name){
     return `Hi, ${name}`
 }
@@ -23,3 +25,14 @@ const functionalCharacter = {
 
 functionalCharacter.messageWithTraditionalFunction('Tu poderes llevan responsabilidades')
 functionalCharacter.messageWithArrowFunction('un mensaje que te motive es un buenos dias')
+
+
+const saludar = () =>{
+    return 'saludo desde funcion flecha'
+}
+
+const saludo = ()=> 'saludos dese esta funcion flecha'
+console.log(saludar());
+
+const regresarObjetos = ()=> ({nombre:'carlos',apellido:'colorado'})
+console.log(regresarObjetos())

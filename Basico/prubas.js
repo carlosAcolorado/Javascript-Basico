@@ -1,1 +1,0 @@
-const numeroEntero = 3
