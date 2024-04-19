@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar texto</title>
+</head>
+<body>
+    <h1 id="titulo">Vamos a cambiar este titulo</h1>
+    <p id='parrafo'></p>
+    <script>
+
+        const titulo = document.querySelector('#titulo')
+        const parrafo = document.querySelector('#parrafo')
+
+        function cambiarTexto(){
+            parrafo.textContent = 'Agregando nuevo contenido'
+            titulo.textContent = 'Por este nuevo titulo'
+        }
+        
+        titulo.addEventListener('click',cambiarTexto);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <h1 id="titulo">Vamos a cambiar este titulo</h1>
+    <br>
+    Nombre: <input type="text" id="nombre" onchange="cambiar(this)">
+
+    <label for="inputText">Ingresa un texto:</label>
+    <input type="text" id="inputText">
+    <br>
+    <p id="mostrar"></p>
+
+    <script>
+
+// Obtener el elemento de entrada de texto
+const inputText = document.getElementById('inputText');
+const mostrar = document.getElementById('mostrar')
+// Agregar un event listener para el evento onchange
+inputText.addEventListener('change', (event)=> {
+  // Cuando se produce un cambio en el campo de entrada de texto, se ejecuta esta función
+  const newValue = event.target.value;
+  mostrar.textContent = 'Valor agregado: '+ newValue
+});
+//cambiando el texto que se ingresa en el input a mayuscula
+function cambiar(nombreInput){
+    nombreInput.value = nombreInput.value.toUpperCase();
+        }
+    </script>
+</body>
+</html>
