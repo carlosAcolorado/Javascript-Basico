@@ -1,0 +1,109 @@
+body{
+    font-family:  "Freeman", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.contenedor{
+    width: auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 50px;
+    color: #D9B504;
+    
+}
+
+.formulario{
+    width: 320px;
+    padding: 20px;
+    background-color: #035AA6;
+    border-radius: 20px;
+    box-shadow: 8px 8px 10px -5px rgba(0,0,0,0.28);;
+}
+
+input{
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.contenedor-boton{
+    display: flex;
+    justify-content: center;
+}
+.boton{
+    margin-top: 20px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-family:  "Freeman", sans-serif;
+    background-color: #04B2D9;
+    color:aliceblue;
+    cursor: pointer;
+    border-style: none;
+    }
+
+label{
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 400;
+    color: aliceblue;
+    
+}
+
+.lista{
+    margin-top: 20px;
+    background-color: rgb(237, 250, 245);
+    padding: 5px;
+    border-radius: 5px;
+}  
+
+.lista .miLista{
+    margin: 0  ;
+    padding: 0;
+   
+}
+
+h3{
+    margin-top: 20px;
+    font-size: 25px;
+    text-align: center;
+    color: #D9B504;
+}
+
+.libros{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 35px;
+    list-style: none;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #035AA6;
+}
+
+.libros button{
+    position: absolute;
+    padding: 5px; 
+    border-radius: 5px;
+    background-color: red;
+    border-style: none;
+    font-size: 15px;
+    font-family:  "Freeman", sans-serif;
+    color: aliceblue;
+    right: 5px;
+    cursor: pointer;
+}
+img{
+    position:absolute;
+    left: -35px;
+}
