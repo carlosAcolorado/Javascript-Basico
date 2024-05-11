@@ -1,4 +1,4 @@
-const data=[/*{
+const data=[{
     title: 'Aprendiendo javaScript',
     year: 2021,
     isbn : '979-1268745',
@@ -15,7 +15,7 @@ const data=[/*{
     year: 2019,
     isbn : '979-1264845',
     author: 'Carlos Azaustre'
-}*/
+}
 ]
 
 async function fetchData(){
@@ -23,10 +23,10 @@ async function fetchData(){
         if(data.length===0){
             reject('Data es empty');
         }
-        setTimeout(()=>{
-            resolve(data)
-        },3000)
-    })
+        console.log('Cargando Datos...')
+        setTimeout(()=>{resolve(data)},4000)
+        }
+    )
 }
 
 /*getData()
@@ -41,7 +41,7 @@ try{
     console.log(books)
 }catch(error){
     console.log(error)
-}
+    }
 }
 
 getData()

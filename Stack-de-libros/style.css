@@ -33,6 +33,7 @@ input{
     width: 100%;
     height: 30px;
     border-radius: 10px;
+    border: none;
 }
 
 .contenedor-boton{
@@ -92,7 +93,7 @@ h3{
 }
 
 .libros button{
-    position: absolute;
+    margin-left: 5px;
     padding: 5px; 
     border-radius: 5px;
     background-color: red;
@@ -100,7 +101,6 @@ h3{
     font-size: 15px;
     font-family:  "Freeman", sans-serif;
     color: aliceblue;
-    right: 5px;
     cursor: pointer;
 }
 img{
