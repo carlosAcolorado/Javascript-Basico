@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List</title>
+</head>
+<body>
+  <input type="text" id="taskInput" placeholder="Agregar una tarea">
+  <button id="addTaskButton">Agregar</button>
+  <ul id="taskList"></ul>
+
+  <script>
+    const taskInput = document.getElementById('taskInput');
+    const addTaskButton = document.getElementById('addTaskButton');
+    const taskList = document.getElementById('taskList');
+
+    // Cargar tareas desde localStorage al cargar la página
+    document.addEventListener('DOMContentLoaded', loadTasks);
+
+    // Agregar una nueva tarea
+    addTaskButton.addEventListener('click', addTask);
+
+    function addTask() {
+      const task = taskInput.value;
+      if (task) {
+        addTaskToDOM(task);
+        saveTaskToLocalStorage(task);
+        taskInput.value = '';  // Limpiar la entrada
+      }
+    }
+
+    function addTaskToDOM(task) {
+      const li = document.createElement('li');
+      li.textContent = task;
+      taskList.appendChild(li);
+    }
+
+    function saveTaskToLocalStorage(task) {
+      let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+      tasks.push(task);
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    function loadTasks() {
+      let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+      tasks.forEach(addTaskToDOM);
+    }
+  </script>
+</body>
+</html>
