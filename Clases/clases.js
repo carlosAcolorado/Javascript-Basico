@@ -8,6 +8,9 @@ class Persona {
         this._nombre = nombre;
         this._apellido = apellido ;
     }
+    saludar(){
+        console.log(`Hola, mi nombre es ${this._nombre} ${this._apellido}`)
+    }
 
     get nombre(){
        return this._nombre 

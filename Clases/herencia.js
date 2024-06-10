@@ -81,6 +81,7 @@ console.log(persona1);
 console.log(persona1.nombreCompleto())
 
 let empleado1 = new Empleado('Maria','Jimenez','Sistemas');
+empleado1.numcarnet = 12562 //esta propieda solo se agregara a la instancia de la clase
 console.log(empleado1);
 console.log(empleado1.nombreCompleto());
 console.log(empleado1.toString());

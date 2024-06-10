@@ -4,15 +4,19 @@
 function Persona(nombre, apellido, email) {
     this.nombre = nombre;
     this.apellido = apellido;
-    this.email = email;
+    this.email = email; //this hace referencia al objeto persona
     this.nombreCompleto = function(){
         return this.nombre + ' ' + this.apellido;
     }
   }
 
   Persona.prototype.tel = '4575815'; //con prototype asignados la propiedad tel a todos los objetos de tipo persona
-    Persona.prototype.direccion = 'Calle 15';
+  Persona.prototype.direccion = 'Calle 15';
+  Persona.prototype.saludar = function (){
+    console.log('Hola a todos')
+  }
 
+  
   let padre = new Persona('Juan','Perez','jperez@mail.com');
   console.log(padre); 
 
@@ -20,6 +24,7 @@ function Persona(nombre, apellido, email) {
   console.log(madre); 
 
 //padre.nombre= 'Pedro'; //modifianco el valor de nombre en el objeto llamado padre
+padre.saludar();
 
 
 
