@@ -29,6 +29,4 @@ const mensaje = morseCodedMessage.join('o/') //convierte a string
 const mensaje2 = numbers.concat(string)
 
 console.log(mensaje2[3]
-
-
 )

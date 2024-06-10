@@ -17,4 +17,4 @@ const vocales = ["a", "e", "i", "o", "u"];
 
 vocales.forEach(function (vocal, indice, arr) {
   console.log(`El valor del elemento en la posición ${indice} es ${vocal} del array que estamos recorriendo que es ${arr}`);
-});
+}); 
